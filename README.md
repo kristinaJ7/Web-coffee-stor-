@@ -1,5 +1,7 @@
 # "Проект Web-coffee-storе"
 
+<img width="1901" height="3560" alt="2025-11-14_18-49-38" src="https://github.com/user-attachments/assets/cda71b2b-4a81-4407-9313-6846c28b63fa" />
+<img width="1901" height="2978" alt="2025-11-14_18-49-59" src="https://github.com/user-attachments/assets/df653f2a-702a-40d0-b5aa-2638339b5748" />
 
 Стек: HTML, SCSS, TS, Vite
 
