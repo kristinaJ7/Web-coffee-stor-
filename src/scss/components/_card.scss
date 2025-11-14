@@ -1,0 +1,92 @@
+//файл для стилей карточек сайта
+$background-color: #e2d2bd;
+$border: 2px solid #dacaba;
+$padding: 20px;
+$color: #585858;
+$box-shadow: 11px -5px 3px 5px #bea489;
+
+$box-shadow-hover: 11px -5px 3px 5px #d5c7ba;
+$border-radius: 20px;
+$max-width: 1150px;
+$category-background-color: #bea489;
+$category-background-color-hover: #8e6c48;
+$category-hover-padding: 13px;
+
+$card-hover-background-color: #e8ded1;
+$color: #ffffff;
+$price-font-size: 1.9rem;
+$gap: 80px;
+$card__background-color: #a78b6c;
+$card__price_color: #a3774a;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $gap;
+  max-width: $max-width;
+  padding: $padding;
+}
+.card {
+  border-radius: $border-radius;
+  background-color: $background-color;
+  border: none;
+  border: $border;
+  padding-inline: $padding;
+  padding-block: 15px;
+  color: $color;
+  box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.card:hover {
+  background-color: $card-hover-background-color;
+  box-shadow: $box-shadow-hover;
+}
+.card__category {
+  background-color: $category-background-color;
+  border-radius: $border-radius;
+  color: $color;
+  padding: 10px;
+}
+.card__category:hover {
+  background-color: $category-background-color-hover;
+  padding: $category-hover-padding;
+}
+.card__title {
+  background-color: $card__background-color;
+  border-radius: 20px;
+  color: $color;
+  text-align: center;
+  padding: 10px;
+}
+.card__image {
+  width: clamp(12.5rem, 10.5682rem + 9.0909vw, 18.75rem);
+  border-radius: $border-radius;
+}
+.card__image:hover {
+  box-shadow: 1px 1px 7px 7px #a89079;
+}
+.card__description {
+  font-weight: 900;
+  background-color: $card__background-color;
+  border-radius: $border-radius;
+  padding-block: 10px;
+  padding-inline: 20px;
+}
+.card__compound{
+  font-weight: 700;
+}
+.card__price {
+  font-size: $price-font-size;
+  color: $card__price_color;
+  font-weight: 900;
+}
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    max-width: 400px;
+  }
+}

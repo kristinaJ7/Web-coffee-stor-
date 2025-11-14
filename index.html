@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/src/scss/main.scss">
+    <link
+      rel="icon"
+      href="./public/images/icon-coffee-.png"
+      type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-coffee-store</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="header_logo">
+        <a  href="./index.html"  class="logo">
+          <span class="header_text">Web coffee storе</span>
+        </a>
+        <svg
+          class="svg_header"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 22 22"
+        >
+          <path
+            fill="#9e623b"
+            fill-rule="evenodd"
+            stroke="#2f2118"
+            stroke-width=".96"
+            d="M8.558 18.91c.045.708-.667 1.194-1.207.734-2.182-1.859-2.9-5.654-1.869-9.5 1.1-4.107 3.839-6.947 6.874-7.104.533-.028.92.476 1.002 1.003.062.403.158.81.202 1.171a5.67 5.67 0 0 1-.993 3.958l-2.838 4.026a6.92 6.92 0 0 0-1.252 4.433zm6.956-15.414c.015-.074.093-.067.162-.035 3.023 1.411 3.976 5.73 2.788 10.161-1.063 3.968-3.652 6.752-6.566 7.079-.624.07-1.077-.61-1.125-1.236-.053-.699-.221-1.454-.256-1.992a5.66 5.66 0 0 1 1.025-3.626L14.38 9.82a6.92 6.92 0 0 0 1.214-4.837c-.119-.97-.11-1.344-.08-1.487Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <address class="address header__address">
+        <ul class="header__address_list">
+          <li class="header__address_list_item">
+            <a href="tel:+99955555555" class="address__link">+9 999 555 5555</a>
+          </li>
+          <li class="header__address_list_item">
+            <a href="mailto:info@sobaka.ge" class="address__link"
+              >info@sobaka.ge</a
+            >
+          </li>
+          <li class="header__address_list_item">
+            <p class="address__text">наб. Принсенграхт 263-</p>
+<p class="address__packed-text">265, Амстердам</p>
+
+          </li>
+        </ul>
+      </address>
+    </header>
+    <section class="description_wrapper">
+      <img 
+        class="description_wrapper_img" 
+        src="./public/images/photo.jpg"
+        alt="">
+      <div class="description_wrapper_text">
+        <h2 class="description_wrapper_title">
+          Web Coffee Store - кофе которое выберают
+        </h2>
+        <p class="description_wrapper_paragraph">
+          Наша кофейня — это уютное пространство, где каждый гость может найти
+          свой идеальный момент отдыха. Мы создали атмосферу, в которой
+          гармонично сочетаются современный дизайн и тёплая домашняя обстановка.
+          Мы предлагаем: авторские кофейные напитки на основе премиальных сортов
+          арабики; альтернативные варианты заваривания (пуровер, аэропресс,
+          сифон); сезонное меню с уникальными вкусовыми сочетаниями; свежую
+          выпечку и десерты от нашего шеф‑кондитера; вегетарианские и
+          безглютеновые опции; ассортимент чая из отборных сортов.
+        </p>
+      </div>
+    </section>
+    <div class="page__wrapper">
+      <h2 class="page__wrapper_title">
+        Наш каталог - попробуйте новинки этого сезона
+      </h2>
+
+      <main id="gallery" class="gallery"></main>
+
+    </div>
+
+    <!--Основной контейнер модального окна (modal)-->
+    <div class="modal" id="modal-container">
+      <div class="modal__container">
+        <button class="modal__close" aria-label="закрыть"></button>
+        <div class="modal__content"></div>
+      </div>
+    </div>
+    <!--Шаблон хранит  HTML-разметку, которая может быть клонирована и вставлена в DOM по необходимости
+(оформление заказа)-->
+    <template id="success">
+      <div class="order-success">
+        <h2 class="order-success__title">Заказ оформлен</h2>
+        <p class="order-success__description">Списано 0 ₽</p>
+        <button class="button order-success__close">к каталогу</button>
+      </div>
+    </template>
+    <!--card-catalog (карточка товара в каталоге)-->
+    <template id="card-catalog">
+      <div class="gallery__item card">
+        <!-- Изменен button → div -->
+        <span class="card__category card__category_soft">новинка</span>
+        <h2 class="card__title">название кофе</h2>
+        <img class="card__image" src="./src/images/Subtract.svg" alt="">
+        <p class="card__description"></p>
+        <p class="card__compound"></p>
+        <div class="card_wrapper_button">
+          <button class="button card__button">купить</button>
+          <span class="card__price">345 ₽</span>
+        </div>
+      </div>
+    </template>
+
+    <!--card-preview (превью карточки товара)-->
+    <template id="card-preview">
+      <div class="card card_full">
+        <img class="card__image" src="./src/images/Subtract.svg" alt="">
+        <div class="card__column">
+          <span class="card__category card__category_other"
+            >популярный выбор</span
+          >
+          <h2 class="card__title">кофе название</h2>
+          <p class="card__text">описание кофе</p>
+          <div class="card__row">
+            <button class="button card__button">купить</button>
+            <span class="card__price">100 ₽</span>
+          </div>
+        </div>
+      </div>
+    </template>
+    <!--card-basket (карточка товара в корзине)-->
+    <template id="card-basket">
+      <li class="basket__item card card_compact">
+        <span class="basket__item-index">1</span>
+        <span class="card__title">кофе</span>
+        <span class="card__price">250 ₽</span>
+        <button
+          class="basket__item-delete card__button"
+          aria-label="удалить"
+        ></button>
+      </li>
+    </template>
+    <!--basket (корзина покупок)-->
+    <template id="basket">
+      <div class="basket">
+        <h2 class="modal__title">Корзина</h2>
+        <ul class="basket__list"></ul>
+        <div class="modal__actions">
+          <button class="button basket__button">Оформить заказ</button>
+          <span class="basket__price">0 ₽</span>
+        </div>
+      </div>
+    </template>
+    <!--order (форма оформления заказа)-->
+    <template id="order">
+      <form class="form" name="order">
+        <div class="order">
+          <div class="order__field">
+            <h2 class="modal__title">Способ оплаты</h2>
+            <div class="order__buttons">
+              <button name="card" type="button" class="button button_alt">
+                Онлайн картой
+              </button>
+              <button name="cash" type="button" class="button button_alt">
+                В кофейне
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="modal__actions">
+          <button type="submit" disabled class="button order__button">
+            Далее
+          </button>
+          <span class="form__errors"></span>
+        </div>
+      </form>
+    </template>
+    <!--Шаблон contacts (форма контактов/оплаты)-->
+    <template id="contacts">
+      <form class="form" name="contacts">
+        <div class="order">
+          <label class="order__field">
+            <span class="form__label modal__title">Email</span>
+            <input
+              name="email"
+              class="form__input"
+              type="text"
+              placeholder="Введите ваш Email">
+          </label>
+          <label class="order__field">
+            <span class="form__label modal__title">Телефон</span>
+            <input
+              name="phone"
+              class="form__input"
+              type="text"
+              placeholder="+7 (">
+          </label>
+        </div>
+        <div class="modal__actions">
+          <button type="submit" disabled class="button">
+            Оплатить покупку
+          </button>
+          <span class="form__errors"></span>
+        </div>
+      </form>
+    </template>
+
+    <div class="section_form">
+      <form class="form-subscribe" id="subscribeForm">
+        <fieldset class="form_fieldset_title">
+          <legend class="section_form_title">
+            Подпишитесь на наши уведомления:
+            при подписке вам будут приходить лучшие новинки сезона
+          </legend>
+        
+          <fieldset class="form_fieldset">
+            <div class="section_form_wrapper">
+              <label for="name">Ваше имя:</label>
+              <input
+                class="input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Имя"
+                minlength="2"
+                maxlength="30"
+                required>
+              <div class="error-message" data-for="name"></div>
+            </div>
+            <div class="section_form_wrapper">
+              <label for="email">Ваш Email:</label>
+              <input
+                class="input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@mail.com"
+                required>
+              <div class="error-message" data-for="email"></div>
+            </div>
+            <div class="section_form_wrapper">
+              <label for="phone">Телефон:</label>
+              <input
+                class="input"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+7 (999) 123-45-67"
+                required>
+              <div class="error-message" data-for="phone"></div>
+            </div>
+            <div class="consent-wrapper">
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="consent"
+                name="consent"
+                value="agreed"
+                required>
+              <label for="consent">
+                Согласен на обработку персональных <br> данных
+              </label>
+            </div>
+            <div class="error-message" data-for="consent"></div>
+  
+          </fieldset>
+        </fieldset>
+        <button class="button button_section_form" type="submit">
+          Подписаться
+        </button>
+      </form>
+    </div>
+
+    <footer class="footer">
+      <h2 class="container_footer_title">Сваренное кофе в лучших традициях по новым стандартам</h2>
+      <div class="footer_content_wrapper">
+        <div class="svg_footer_container">
+          <svg
+            class="svg_footer"
+            xmlns="http://www.w3.org/2000/svg"
+            width="800"
+            height="800"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="#744a30"
+              d="M5.52 15.12a.48.48 0 0 1 .48-.48h9.84a.48.48 0 0 1 .48.48v.96a4.8 4.8 0 0 1-4.8 4.8h-1.2a4.8 4.8 0 0 1-4.8-4.8z"
+            />
+            <path
+              stroke="#2f2118"
+              d="M5.52 13.68A.48.48 0 0 1 6 13.2h9.84a.48.48 0 0 1 .48.48v2.4a4.8 4.8 0 0 1-4.8 4.8h-1.2a4.8 4.8 0 0 1-4.8-4.8zM5.217 21.057a.104.104 0 0 1 .073-.177h11.26c.092 0 .138.112.073.177a1.03 1.03 0 0 1-.732.303H5.95c-.275 0-.538-.109-.732-.303Z"
+            />
+            <path
+              stroke="#2f2118"
+              stroke-linecap="round"
+              d="M16.32 14.16s2.4 0 2.4 1.796c0 2.035-2.52 1.795-2.52 1.795"
+            />
+            <path
+              fill="#2f2118"
+              stroke="#2f2118"
+              stroke-linecap="round"
+              d="M18.622 2.317 18.17 2.3a.24.24 0 0 0-.148.044l-.268.188a.24.24 0 0 0-.058.335l2.262 3.21a.24.24 0 0 0 .335.057l.294-.207a.24.24 0 0 0 .066-.07l.15-.243a.24.24 0 0 0-.17-.365l-.26-.035a.24.24 0 0 1-.201-.287l.076-.366a.24.24 0 0 0-.202-.287l-.37-.05a.24.24 0 0 1-.202-.288l.076-.366a.24.24 0 0 0-.202-.286l-.37-.051a.24.24 0 0 1-.202-.287l.07-.34a.24.24 0 0 0-.225-.289ZM4.466 4.6l-.03.431a.24.24 0 0 0 .042.156l.162.229a.24.24 0 0 0 .334.058l3.21-2.262a.24.24 0 0 0 .058-.334l-.18-.257a.24.24 0 0 0-.076-.069l-.23-.135a.24.24 0 0 0-.358.166l-.046.267a.24.24 0 0 1-.278.195l-.371-.064a.24.24 0 0 0-.277.195l-.065.372a.24.24 0 0 1-.277.195l-.372-.064a.24.24 0 0 0-.277.195l-.064.372a.24.24 0 0 1-.278.195l-.346-.06a.24.24 0 0 0-.28.22Z"
+            />
+            <path
+              stroke="#2f2118"
+              d="M11.544 8.025a.96.96 0 0 1 .258-1.298l5.493-3.87a.96.96 0 0 1 1.338.231l1.432 2.033a.96.96 0 0 1-.232 1.338l-5.926 4.176a.96.96 0 0 1-1.496-.603l-.142-.736a1 1 0 0 0-.131-.331zM7.342 3.267a.96.96 0 0 1 1.337.231l2.102 2.983a.96.96 0 0 1-.271 1.365l-.859.543a1 1 0 0 1-.33.13l-1.586.307a.96.96 0 0 1-.967-.39l-1.69-2.4A.96.96 0 0 1 5.308 4.7z"
+            />
+            <circle
+              cx="10.56"
+              cy="10.08"
+              r=".48"
+              fill="#744a30"
+              stroke="#2f2118"
+              transform="rotate(90 10.56 10.08)"
+            />
+            <circle
+              cx="8.4"
+              cy="10.8"
+              r=".48"
+              fill="#744a30"
+              stroke="#2f2118"
+              transform="rotate(90 8.4 10.8)"
+            />
+            <circle
+              cx="10.08"
+              cy="12.24"
+              r=".48"
+              fill="#744a30"
+              stroke="#2f2118"
+              transform="rotate(90 10.08 12.24)"
+            />
+            <circle
+              cx="12.24"
+              cy="12.48"
+              r=".48"
+              fill="#744a30"
+              stroke="#2f2118"
+              transform="rotate(90 12.24 12.48)"
+            />
+          </svg>
+          <p class="footer_text">&copy; 2025 Web Coffee Store.</p>
+        </div>
+        <address class="address header__address">
+          <ul class="header__address_list">
+            <li class="header__address_list_item">
+              <a href="tel:+99955555555" class="address__link"
+                >+9 999 555 5555</a
+              >
+            </li>
+            <li class="header__address_list_item">
+              <a href="mailto:info@sobaka.ge" class="address__link"
+                >info@sobaka.ge</a
+              >
+            </li>
+            <li class="header__address_list_item">
+             <p class="address__text">наб. Принсенграхт 263-</p>
+<p class="address__packed-text">265, Амстердам</p>
+            </li>
+          </ul>
+        </address>
+        <div class="footer_href_content">
+          <ul class="footer_href_content_list">
+            <li id="about" class="footer_href_content_item">
+              <a href="info.html#about">О нас</a>
+            </li>
+            <li id="cooperation" class="footer_href_content_item">
+              <a href="info.html#cooperation">Сотрудничество</a>
+            </li>
+            <li id="contacts" class="footer_href_content_item">
+              <a href="info.html#contacts">Контакты</a>
+            </li>
+            <li id="reviews" class="footer_href_content_item">
+              <a href="info.html#reviews">Оставить отзыв</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

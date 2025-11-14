@@ -1,0 +1,11 @@
+//основной файл стилей иппорт стилей
+@use "components/button";
+@use "./components/card";
+@use "./components/header";
+@use "./components/footer";
+@use "./components/page";
+@use './components/description';
+@use './components/section_form';
+@use './components/globals.scss';
+
+@use "pages/_new-page.scss";

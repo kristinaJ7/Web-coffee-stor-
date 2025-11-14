@@ -1,0 +1,17 @@
+{
+  "name": "web-coffee-store",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+     "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.93.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.7"
+  }
+}

@@ -1,0 +1,21 @@
+$button_background-color: #af865b;
+$color: #ffffff;
+$font-weight: 900;
+.card_wrapper_button {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.button {
+  border: none;
+  background-color: $button_background-color;
+  padding-block: 15px;
+  padding-inline: 40px;
+  border-radius: 20px;
+  color: $color;
+  font-weight: $font-weight;
+}
+.button:hover {
+  background-color: #8f6130;
+  cursor: pointer;
+}

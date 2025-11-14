@@ -1,0 +1,34 @@
+.description_wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 5px solid #bea489;
+  border-radius: 30px;
+  padding: 30px;
+  margin-inline: clamp(1.25rem, -0.1023rem + 6.3636vw, 5.625rem);
+  background-color: #bea489;
+  align-items: center;
+  justify-items: center;
+  color: #ffffff;
+  gap: 20px;
+  box-shadow: 1px 1px 7px 7px #a89079;
+}
+.description_wrapper_img {
+  max-width: 400px;
+  border-radius: 30px;
+}
+.description_wrapper_title {
+  font-weight: 900;
+  font-size: 2rem;
+}
+.description_wrapper_paragraph {
+  font-weight: 700;
+}
+
+@media (max-width: 950px) {
+  .description_wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .description_wrapper_img {
+    width: 100%;
+  }
+}
