@@ -1,6 +1,6 @@
 # "Проект Web-coffee-storе"
 
-![2025-11-21_15-56-48_imgupscaler ai_Бета_2K](https://github.com/user-attachments/assets/fcd6f37d-c5a7-4399-9ffd-4775baad2585)
+![2025-11-21_15-56-48_imgupscaler ai_Общее улучшение_4K](https://github.com/user-attachments/assets/901afa02-169f-4bd4-9332-2904ef43ab5e)
 
 
 
