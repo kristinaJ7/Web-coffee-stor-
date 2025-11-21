@@ -1,6 +1,6 @@
 # "Проект Web-coffee-storе"
 
-<img width="2702" height="2425" alt="Airbrush-IMAGE-ENHANCER-1763729675544-1763729675544" src="https://github.com/user-attachments/assets/beb49857-f931-42e6-8791-65d0e3415270" />
+![2025-11-21_15-56-48_imgupscaler ai_Бета_2K](https://github.com/user-attachments/assets/fcd6f37d-c5a7-4399-9ffd-4775baad2585)
 
 
 
