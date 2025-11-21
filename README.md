@@ -1,6 +1,6 @@
 # "Проект Web-coffee-storе"
 
-<img width="926" height="831" alt="2025-11-21_15-51-05" src="https://github.com/user-attachments/assets/a310790d-c0a2-45c9-b442-e30351c1e3a6" />
+<img width="2702" height="2425" alt="Airbrush-IMAGE-ENHANCER-1763729675544-1763729675544" src="https://github.com/user-attachments/assets/beb49857-f931-42e6-8791-65d0e3415270" />
 
 
 
