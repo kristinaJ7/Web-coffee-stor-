@@ -17,13 +17,8 @@
   border-radius: 30px;
 }
 .description_wrapper_title {
-  font-weight: 900;
   font-size: 2rem;
 }
-.description_wrapper_paragraph {
-  font-weight: 700;
-}
-
 @media (max-width: 950px) {
   .description_wrapper {
     grid-template-columns: repeat(1, 1fr);

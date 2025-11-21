@@ -40,6 +40,7 @@ export class EmailValidator implements FieldValidator<string> {
   //регулярное выражение
   private regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+  //сравниваем выражение
   validate(email: string): boolean {
     if (!email || typeof email !== "string") return false;
     return this.regex.test(email.trim());
@@ -85,10 +86,10 @@ export class ConsentValidator implements FieldValidator<boolean> {
 // Сервис для валидации всей формы
 export class FormValidator {
   // Экземпляры валидаторов
-  private nameValidator = new NameValidator();
-  private emailValidator = new EmailValidator();
-  private phoneValidator = new PhoneValidator();
-  private consentValidator = new ConsentValidator();
+  private nameValidator = new NameValidator(); //имя
+  private emailValidator = new EmailValidator(); //емаил
+  private phoneValidator = new PhoneValidator(); //телефон
+  private consentValidator = new ConsentValidator(); //чекбокс
 
   validate(formData: FormData): {
     isValid: boolean;

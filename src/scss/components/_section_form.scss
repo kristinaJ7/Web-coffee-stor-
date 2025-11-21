@@ -5,7 +5,6 @@ $input-background-color: #d8c0a5;
 $padding-form-subscribe: 40px;
 $border-radius: 20px;
 $section_form_title-font-size: 2rem;
-$title_font-weight: 900;
 $section_form_title_background-color: #cbb69e;
 
 .form-subscribe {
@@ -26,11 +25,9 @@ $section_form_title_background-color: #cbb69e;
 }
 .section_form_title {
   font-size: $section_form_title-font-size;
-  font-weight: $title_font-weight;
   background-color: $section_form_title_background-color;
   border-radius: 10px;
   padding: 10px;
-
 }
 .form_fieldset{
   display: flex;

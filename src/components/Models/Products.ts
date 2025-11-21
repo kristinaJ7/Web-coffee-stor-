@@ -1,7 +1,7 @@
 //для работы с интерфейсом для товара
 
 // импортируем интерфейс продукта
-import type { Product } from "../../types/index.js";
+import type { Product } from "../../types";
 
 export class Products {
   // объявляем класс, который определяет структуру и поведение для будущих объектов

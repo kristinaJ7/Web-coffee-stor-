@@ -28,3 +28,6 @@ export interface Submitform {
   phone: string;
   consent: boolean;
 }
+
+
+

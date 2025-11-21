@@ -1,7 +1,6 @@
 $header_background-color: #bea489;
 $header_color: white;
 $header_font-size: 2.3rem;
-$header_text_font-weight: 900;
 $header_address: #d8c0a7;
 $header_address_border-radius: 20px;
 $address_font-size: 1rem;
@@ -15,7 +14,6 @@ $address_font-size: 1rem;
   background-color: $header_background-color;
   color: $header_color;
   font-size: $header_font-size;
-  font-weight: $header_text_font-weight;
   width: 100%;
 }
 .header_logo {

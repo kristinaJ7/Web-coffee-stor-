@@ -3,7 +3,6 @@ $color: white;
 $font-size: 2.3rem;
 $padding-block: 60px;
 $gap: 50px;
-$title_font-weight: 900;
 $text_font-size: 1rem;
 $list_background-color: #d8c0a7;
 $list_border-radius: 20px;
@@ -20,11 +19,7 @@ $font-weight: 700;
   display: flex;
   flex-direction: column;
   gap: $gap;
-  font-weight: $font-weight;
   width: 100%;
-}
-.container_footer_title {
-  font-weight: $title_font-weight;
 }
 .footer_content_wrapper {
   display: flex;
@@ -35,11 +30,11 @@ $font-weight: 700;
   background-color: $list_background-color;
   border-radius: $list_border-radius;
   padding-inline: $list_padding-inline;
-  padding-block: 40px;
+  padding-block: 45px;
 }
 .svg_footer {
-  width: 80px;
-  height: 80px;
+  width: 83px;
+  height: 83px;
 }
 .footer_text {
   font-size: $text_font-size;

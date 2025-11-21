@@ -8,6 +8,8 @@ import { Basket } from "./components/Models/Basket";
 import { Customer } from "./components/Models/Buyer";
 import { Products } from "./components/Models/Products";
 
+import { FormValidator } from "./components/Models/form/form";
+
 //ПРОВЕРКА И ВЫВОД В КОНСОЛЬ
 //проверка класса  ProductsCatalog и его методов
 const productsModel = new Products();
@@ -124,4 +126,78 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   apiProducts.items.forEach(renderProductCard);
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("subscribeForm") as HTMLFormElement;
+  const errorMessages = document.querySelectorAll(".error-message");
+
+  const clearErrors = () => {
+    errorMessages.forEach((el) => {
+      el.textContent = "";
+    });
+  };
+
+  const showErrors = (errors: Record<string, string>) => {
+    Object.keys(errors).forEach((field) => {
+      const errorEl = document.querySelector(
+        `.error-message[data-for="${field}"]`
+      );
+      if (errorEl) {
+        errorEl.textContent = errors[field];
+      }
+    });
+  };
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    clearErrors();
+
+    const formData = {
+      name: (document.getElementById("name") as HTMLInputElement).value,
+      email: (document.getElementById("email") as HTMLInputElement).value,
+      phone: (document.getElementById("phone") as HTMLInputElement).value,
+      consent: (document.getElementById("consent") as HTMLInputElement).checked,
+    };
+
+    try {
+      const validator = new FormValidator();
+      const result = validator.validate(formData);
+
+      if (result.isValid) {
+        fetch("http://localhost:3000/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP ошибка! Статус: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            alert(`Подписка оформлена! Статус: ${data.message}`);
+            form.reset();
+          })
+          .catch((err) => {
+            console.error("Ошибка запроса:", err);
+            if (err.message.includes("HTTP")) {
+              alert("Ошибка сервера: " + err.message);
+            } else {
+              alert("Сетевая ошибка. Проверьте подключение к серверу.");
+            }
+          });
+      } else {
+        showErrors(result.errors);
+      }
+    } catch (err) {
+      console.error("Ошибка валидации:", err);
+      alert("Ошибка валидации формы. Проверьте данные.");
+    }
+  });
 });
