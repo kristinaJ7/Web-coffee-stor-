@@ -1,5 +1,8 @@
 # "Проект Web-coffee-storе"
 
+<img width="1080" height="1440" alt="photo-collage png (1)" src="https://github.com/user-attachments/assets/82ec4d21-d047-4fcf-a6e9-0761c12832d6" />
+
+
 # Главная страница
 
 <img width="1901" height="3560" alt="2025-11-14_18-49-38" src="https://github.com/user-attachments/assets/cda71b2b-4a81-4407-9313-6846c28b63fa" />
